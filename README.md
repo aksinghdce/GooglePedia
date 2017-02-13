@@ -11,6 +11,6 @@ Aayush, Amit
 
 |  Topic       | Concepts | Programming Exercises |
 |---------------|----------|----------------------|
-|1. [Recursion](https://github.com/aksinghdce/GooglePedia/blob/master/checkpoints/1.recursion/recursion/1.%2BRecursion%2Band%2BBacktracking.md)  |   10%    |       05%             |
-|2. [Linked List](https://github.com/aksinghdce/GooglePedia/blob/master/checkpoints/2.linked_list/linked_list/Reverse%2BLinked%2BList.md)|   08%    |       05%             |
+|1. [Recursion](https://github.com/aksinghdce/GooglePedia/blob/master/Users/Amit/Checkpoints/1.recursion/recursion/1.%2BRecursion%2Band%2BBacktracking.md)  |   10%    |       05%             |
+|2. [Linked List](https://github.com/aksinghdce/GooglePedia/blob/master/Users/Amit/Checkpoints/2.linked_list/linked_list/Reverse%2BLinked%2BList.md)|   08%    |       05%             |
 |2. [Graph]()      |   20%    |       15%             |
