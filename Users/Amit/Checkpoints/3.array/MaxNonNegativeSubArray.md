@@ -11,7 +11,7 @@ class Invariant:
     def __init__(self, arr_, begin_, sum_, length_=1, end_=2):
         self.array_ = arr_
         self.begin_ = begin_
-        self.sum_ = arr_[begin_]
+        self.sum_ = sum_
         self.length_ = length_
         self.end_ = end_
     def setSum(self, sum_):
@@ -56,21 +56,21 @@ class Solution:
         i = 0
         while i < len(A):
             # Skip all negative values, at the end of this loop A[i] is first positive
-            while A[i] < 0 and i<len(A):
+            while i<len(A) and A[i] < 0:
                 i = i + 1
             # set first positive as begin_ in a new max candidate
             temp_invariant = Invariant(arr_ = A, begin_ = i, sum_ = 0, length_ = 1, end_ = i+1)
-            while i<len(A) and A[i] > 0 :
+            if i+1 > len(A):
+                break
+            while i<len(A) and A[i] >= 0 :
                 temp_invariant.setSum(temp_invariant.getSum() + A[i])
                 temp_invariant.setLength(temp_invariant.getLength() + 1)
                 i = i + 1
             temp_invariant.setEnd(i)
             return_value = self.updateMax(temp_invariant, A)
+        if return_value == None:
+            return []
         return A[return_value.getBegin():return_value.getEnd()]
-            
-                
-            
-                
 ```
 
 
@@ -80,7 +80,7 @@ solution = Solution()
 
 
 ```python
-result = solution.maxset([ 1, 2, 5, -7, 2, 5 ])
+result = solution.maxset([ 336465782, -278722862, -2145174067, 1101513929, 1315634022, -1369133069, 1059961393, 628175011, -1131176229, -859484421 ])
 ```
 
 
@@ -91,6 +91,6 @@ result
 
 
 
-    [1, 2, 5]
+    [1059961393, 628175011]
 
 
