@@ -27,16 +27,19 @@ Algorithm for partition:
 
 1. input to the algorithm: Array, p = start index, r= end index
     1. Initialize i = p - 1 : i is the index that tells that elements from p to i (inclusive) are smaller than Array[r]
-2. Traverse the array: j=0 to j < r
+2. Case b in the diagram beloww:
+    Traverse the array: j=0 to j < r
     if Array[j] is smaller than or equal to Array[r]:
     then, move Array[j] to Array[i+1] and update i to i+1: Now till i everything is smaller than Array[r]
     also increment j to make it ready for the next iteration and look at a brand new element in the Array that is smaller in index than r.
     Repeat this step for new j
-3. Loop has ended: j must be equal to r now
+3. Loop has ended: j must be equal to r now: because the above loop's termination condition is that.
     Now i+1 is the first element that is greater than or equal to Array[r]
     swap (i+1)th position and rth position:
     At this stage, till i everything is smaller than Array[r]
     return i+1: i+1 is the pivot.
+    
+<img src="images/QuickSortAlgorithm.png" />
 
 
 ```python
