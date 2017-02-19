@@ -6,6 +6,65 @@
 - Wikipedia Says:
     1. In computer science, quickselect is a selection algorithm to find the kth smallest element in an unordered list. It is related to the quicksort sorting algorithm.
 
+# QuickSelect Algorithm PseudoCode
+
+The algorithm asks for the kth smallest element in an unordered list. Let the list be Array.
+
+1. Input to our function are the Array, begin, end, and k
+2. Output is the kth smallest element in the Array
+3. We get the partition index by calling Partition on the Array with a particular begin and end
+4. If the partition index is smaller than k, then we only need to work on the right hand of partition index.
+5. If the partition index is greater than k, then we only need to work on the left hand of partition index.
+
+
+```python
+def partition_select(A, begin, end):
+    if end <= begin:
+        return begin
+    
+    import random, math
+    random_loc = int(begin + math.floor((random.random() * (end - begin + 1))))
+    A[end], A[random_loc] = A[random_loc], A[end]
+    x = A[end]
+    i = begin - 1
+    j = begin
+    while j < end:
+        if A[j] <= x:
+            i = i + 1
+            A[i], A[j] = A[j], A[i]
+        j = j + 1
+    assert j == end
+    A[i+1], A[j] = A[j], A[i+1]
+    return (i+1)
+
+def quick_select(A, begin, end, k):
+    if end > begin:
+        q = partition_select(A, begin, end)
+        if q < k:
+            quick_select(A, q+1, end, k)
+        elif q > k:
+            quick_select(A, begin, q, k)
+        elif q == k:
+            print "kth smallest is:" + str(A[k])
+            return A[k]
+```
+
+
+```python
+A = [0, 1, 3, 5, 4, 2, -3, -2, 11]
+quick_select(A, 0, len(A) - 1, 0)
+```
+
+    kth smallest is:-3
+
+
+
+```python
+A
+```
+
+# Appendix: QuickSort
+
 ## Let's understand QuickSort
 
 ### Divide and Conquer Idea: 
