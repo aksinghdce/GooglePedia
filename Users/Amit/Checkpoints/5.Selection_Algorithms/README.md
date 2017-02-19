@@ -45,7 +45,7 @@ def quick_select(A, begin, end, k):
         elif q > k:
             quick_select(A, begin, q, k)
         elif q == k:
-            print "kth smallest is:" + str(A[k])
+            print str(k) + "th smallest is:" + str(A[k])
             return A[k]
 ```
 
@@ -55,7 +55,7 @@ A = [0, 1, 3, 5, 4, 2, -3, -2, 11]
 quick_select(A, 0, len(A) - 1, 0)
 ```
 
-    kth smallest is:-3
+    0th smallest is:-3
 
 
 
