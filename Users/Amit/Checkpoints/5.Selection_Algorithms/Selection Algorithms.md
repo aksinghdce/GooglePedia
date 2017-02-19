@@ -260,6 +260,8 @@ partition2([2, 2, 2, 2, 2], 0, 4)
     #In the partition function just change "<=" to ">="
 def partition_increasing_order(array, p, r):
     i = p - 1
+    if p == r:
+        return p
     x = array[r]
     q = p
     while q<r:
@@ -297,3 +299,47 @@ A
     [9, 6, 5, 3, 2, 1]
 
 
+
+# Unit Testing QuickSort
+
+Get started with [pytest](http://docs.pytest.org/en/latest/getting-started.html#installation)
+
+
+```python
+import pytest
+```
+
+
+```python
+def test_quicksort():
+    A = [2, 3, 1, 6, 5, 9]
+    p = 0
+    r = len(A) - 1
+    quicksort_increasing_order(A, p, r)
+    assert A == [9, 6, 5, 3, 2, 1]
+```
+
+
+```python
+test_quicksort()
+```
+
+
+```python
+def test_quicksort_trivial():
+    A = [1]
+    p = 0
+    r = len(A) - 1
+    quicksort_increasing_order(A, p, r)
+    assert A == [1]
+```
+
+
+```python
+test_quicksort()
+```
+
+
+```python
+test_quicksort_trivial()
+```
