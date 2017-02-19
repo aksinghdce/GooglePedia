@@ -258,7 +258,7 @@ partition2([2, 2, 2, 2, 2], 0, 4)
 ```python
 #Answer to 7.1-4:
     #In the partition function just change "<=" to ">="
-def partition_increasing_order(array, p, r):
+def partition_decreasing_order(array, p, r):
     i = p - 1
     if p == r:
         return p
@@ -275,17 +275,17 @@ def partition_increasing_order(array, p, r):
     array[i+1], array[q] = array[q], array[i+1]
     return i+1
 
-def quicksort_increasing_order(A, p, r):
+def quicksort_decreasing_order(A, p, r):
     if p < r:
-        q = partition_increasing_order(A, p, r)
-        quicksort_increasing_order(A, p, q-1)
-        quicksort_increasing_order(A, q+1, r)
+        q = partition_decreasing_order(A, p, r)
+        quicksort_decreasing_order(A, p, q-1)
+        quicksort_decreasing_order(A, q+1, r)
 ```
 
 
 ```python
 A = [2, 3, 1, 6, 5, 9]
-quicksort_increasing_order(A, 0, 5)
+quicksort_decreasing_order(A, 0, 5)
 ```
 
 
@@ -315,7 +315,7 @@ def test_quicksort():
     A = [2, 3, 1, 6, 5, 9]
     p = 0
     r = len(A) - 1
-    quicksort_increasing_order(A, p, r)
+    quicksort_decreasing_order(A, p, r)
     assert A == [9, 6, 5, 3, 2, 1]
 ```
 
@@ -330,7 +330,7 @@ def test_quicksort_trivial():
     A = [1]
     p = 0
     r = len(A) - 1
-    quicksort_increasing_order(A, p, r)
+    quicksort_decreasing_order(A, p, r)
     assert A == [1]
 ```
 
