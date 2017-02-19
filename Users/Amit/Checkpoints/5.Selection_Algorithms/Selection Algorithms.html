@@ -12093,7 +12093,7 @@ Swap (i + 1):1 and j:1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">partition2</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
@@ -12131,7 +12131,7 @@ Swap (i + 1):1 and j:1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">partition2</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -12146,7 +12146,7 @@ Swap (i + 1):1 and j:1
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[2]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -12183,13 +12183,15 @@ Swap (i + 1):1 and j:1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#Answer to 7.1-4:</span>
     <span class="c1">#In the partition function just change &quot;&lt;=&quot; to &quot;&gt;=&quot;</span>
 <span class="k">def</span> <span class="nf">partition_increasing_order</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="n">r</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">p</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
     <span class="n">q</span> <span class="o">=</span> <span class="n">p</span>
     <span class="k">while</span> <span class="n">q</span><span class="o">&lt;</span><span class="n">r</span><span class="p">:</span>
@@ -12217,7 +12219,7 @@ Swap (i + 1):1 and j:1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
@@ -12231,7 +12233,7 @@ Swap (i + 1):1 and j:1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">A</span>
@@ -12246,7 +12248,7 @@ Swap (i + 1):1 and j:1
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt output_prompt">Out[64]:</div>
 
 
 
@@ -12256,6 +12258,113 @@ Swap (i + 1):1 and j:1
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-Testing-QuickSort">Unit Testing QuickSort<a class="anchor-link" href="#Unit-Testing-QuickSort">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Get started with <a href="http://docs.pytest.org/en/latest/getting-started.html#installation">pytest</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">test_quicksort</span><span class="p">():</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">quicksort_increasing_order</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">A</span> <span class="o">==</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">test_quicksort</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">test_quicksort_trivial</span><span class="p">():</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">quicksort_increasing_order</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">A</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">test_quicksort</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">test_quicksort_trivial</span><span class="p">()</span>
+</pre></div>
+
+</div>
 </div>
 </div>
 
