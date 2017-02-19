@@ -11807,6 +11807,125 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="QuickSelect-Algorithm-PseudoCode">QuickSelect Algorithm PseudoCode<a class="anchor-link" href="#QuickSelect-Algorithm-PseudoCode">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The algorithm asks for the kth smallest element in an unordered list. Let the list be Array.</p>
+<ol>
+<li>Input to our function are the Array, begin, end, and k</li>
+<li>Output is the kth smallest element in the Array</li>
+<li>We get the partition index by calling Partition on the Array with a particular begin and end</li>
+<li>If the partition index is smaller than k, then we only need to work on the right hand of partition index.</li>
+<li>If the partition index is greater than k, then we only need to work on the left hand of partition index.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">partition_select</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">end</span> <span class="o">&lt;=</span> <span class="n">begin</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">begin</span>
+    
+    <span class="kn">import</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">math</span>
+    <span class="n">random_loc</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">begin</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">begin</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))))</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">end</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">random_loc</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">random_loc</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">end</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">end</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">begin</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">begin</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="n">j</span> <span class="o">==</span> <span class="n">end</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">quick_select</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">end</span> <span class="o">&gt;</span> <span class="n">begin</span><span class="p">:</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">partition_select</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">q</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+            <span class="n">quick_select</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">q</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">q</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">:</span>
+            <span class="n">quick_select</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">q</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+            <span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;th smallest is:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">quick_select</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0th smallest is:-3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">A</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Appendix:-QuickSort">Appendix: QuickSort<a class="anchor-link" href="#Appendix:-QuickSort">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Let's-understand-QuickSort">Let's understand QuickSort<a class="anchor-link" href="#Let's-understand-QuickSort">&#182;</a></h2>
 </div>
 </div>
