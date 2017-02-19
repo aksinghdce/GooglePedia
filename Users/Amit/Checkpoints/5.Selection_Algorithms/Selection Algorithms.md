@@ -45,7 +45,7 @@ Algorithm for partition:
     At this stage, till i everything is smaller than Array[r]
     return i+1: i+1 is the pivot.
     
-<img src="images/QuickSortAlgorithm.png" />
+![QuickSort Algorithm Loop Invariant](QuickSortAlgorithm.png)
 
 
 ```python
@@ -178,7 +178,7 @@ A
 1. 7.1-1
     Using Figure 7.1 as a model, illustrate the operation of PARTITION on the array
     A = [13, 19, 9, 5, 12, 8, 7, 4, 21, 2, 6, 11]
-    <img src="images/Example_Model_QuickSort.png" />
+    ![Example Walkthrough Figulre 7.1](Example_Model_QuickSort.png)
     
     Answer:
     
