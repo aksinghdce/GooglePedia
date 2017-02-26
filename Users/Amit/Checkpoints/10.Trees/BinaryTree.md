@@ -132,7 +132,7 @@ class BST(object):
 
 ```python
 nodes = [2, 4, 13, 11, 5, 7, 9]
-nodes = [1, 0, 2]
+nodes = [1, 0, 2, 12, -3, -14, 14, 23, 21, 22, 2]
 ```
 
 
@@ -149,9 +149,17 @@ for node_data in nodes:
 bst.display(bst.get_root())
 ```
 
+    -14
+    -3
     0
     1
     2
+    2
+    12
+    14
+    21
+    22
+    23
 
 
 
@@ -159,9 +167,17 @@ bst.display(bst.get_root())
 bst.display_non_recursive(bst.get_root())
 ```
 
+    -14
+    -3
     0
     1
     2
+    2
+    12
+    14
+    21
+    22
+    23
 
 
 
@@ -169,9 +185,17 @@ bst.display_non_recursive(bst.get_root())
 bst.display_nr2(bst.get_root())
 ```
 
+    -14
+    -3
     0
     1
     2
+    2
+    12
+    14
+    21
+    22
+    23
 
 
 
@@ -182,6 +206,14 @@ bst.display_preorder(bst.get_root())
     1
     0
     2
+    -3
+    2
+    12
+    -14
+    14
+    23
+    21
+    22
 
 
 
@@ -189,7 +221,15 @@ bst.display_preorder(bst.get_root())
 bst.display_postorder(bst.get_root())
 ```
 
+    22
+    21
+    23
+    14
+    12
     2
+    2
+    -14
+    -3
     0
     1
 
