@@ -78,7 +78,7 @@ class BST(object):
             stack.append(curr)
             left = curr.get_left()
             right = curr.get_right()
-            #Base condition: leaf node
+            #Base condition: leaf node or a node with both children visited
             if ((left == None) or left in visited) and ((right == None) or right in visited):
                 visited.add(curr)
                 print curr.get_data()
@@ -128,21 +128,18 @@ class BST(object):
     def get_root(self):
         return self.root
     
+    # height of an empty tree is -1, height of a tree with just one node is 0
+    # height ::= number of edges connecting the root with the deepest leaf
     def height(self, root):
-        count = 0
         if root == None:
-            return count
-        elif (root.get_left() != None) and (root.get_right() == None):
-            return 1 + self.height(root.get_left())
-        elif (root.get_left() == None) and (root.get_right() != None):
-            return 1 + self.height(root.get_right())
+            return -1
         else:
             return 1 + max(self.height(root.get_left()), self.height(root.get_right()))
 ```
 
 
 ```python
-nodes = [2, 1, 3, 7, 2.5]
+nodes = [2, 1, 3, 7, 2.5, 2.7, 2.9]
 #nodes = [1, 0, 2, 12, -3, -14, 14, 23, 21, 22, 2]
 ```
 
@@ -163,6 +160,8 @@ bst.display(bst.get_root())
     1
     2
     2.5
+    2.7
+    2.9
     3
     7
 
@@ -175,6 +174,8 @@ bst.display_non_recursive(bst.get_root())
     1
     2
     2.5
+    2.7
+    2.9
     3
     7
 
@@ -187,6 +188,8 @@ bst.display_nr2(bst.get_root())
     1
     2
     2.5
+    2.7
+    2.9
     3
     7
 
@@ -201,6 +204,8 @@ bst.display_preorder(bst.get_root())
     3
     2.5
     7
+    2.7
+    2.9
 
 
 
@@ -209,6 +214,8 @@ bst.display_postorder(bst.get_root())
 ```
 
     7
+    2.9
+    2.7
     2.5
     3
     1
@@ -223,6 +230,6 @@ bst.height(bst.get_root())
 
 
 
-    3
+    4
 
 
