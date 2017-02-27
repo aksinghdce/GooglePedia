@@ -25,6 +25,10 @@ class TreeNode(object):
 class BST(object):
     def __init__(self):
         self.root = None
+    # for insertion the base case is trivial
+    # For other cases we need to keep track of predecessor while traversing the tree
+    # as per the vaule of the node being inserted
+    # a special case is if the new node's data already exists in the tree
     def insert(self, node):
         if node == None:
             print "node passed is None"
@@ -50,7 +54,8 @@ class BST(object):
                 pred.set_left(node)
             else:
                 pred.set_right(node)
-    
+    # In pre order traversal, we keep pushing left, right of every node in a queue
+    # so that nodes are printed in the order they are visited in pre order
     def display_preorder(self, node):
         queue = list()
         queue.append(node)
@@ -64,7 +69,11 @@ class BST(object):
             right = curr.get_right()
             if right:
                 queue.append(curr.get_right())
-    
+    # In post order we need to print the children before the self
+    # this means we need to keep track of the children that are already visited
+    # so we need a visited set and a stack to keep the intermediate nodes
+    # a stack would be popped if either both the children are None or both the children 
+    # are visited
     def display_postorder(self, node):
         curr = node
         visited = set()
@@ -100,6 +109,10 @@ class BST(object):
             self.display(curr.left)
             print curr.get_data()
             self.display(curr.right)
+        
+    # in inorder traversal, we keep going left and keep pushing
+    # in the stack, when we hit extreme left then we pop and go right
+    # and treat the right node as the new tree being traversed in inorder
     def display_non_recursive(self, node):
         stack = list()
         curr = node
