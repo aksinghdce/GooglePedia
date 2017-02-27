@@ -127,12 +127,23 @@ class BST(object):
             
     def get_root(self):
         return self.root
+    
+    def height(self, root):
+        count = 0
+        if root == None:
+            return count
+        elif (root.get_left() != None) and (root.get_right() == None):
+            return 1 + self.height(root.get_left())
+        elif (root.get_left() == None) and (root.get_right() != None):
+            return 1 + self.height(root.get_right())
+        else:
+            return 1 + max(self.height(root.get_left()), self.height(root.get_right()))
 ```
 
 
 ```python
-nodes = [2, 4, 13, 11, 5, 7, 9]
-nodes = [1, 0, 2, 12, -3, -14, 14, 23, 21, 22, 2]
+nodes = [2, 1, 3, 7, 2.5]
+#nodes = [1, 0, 2, 12, -3, -14, 14, 23, 21, 22, 2]
 ```
 
 
@@ -149,17 +160,11 @@ for node_data in nodes:
 bst.display(bst.get_root())
 ```
 
-    -14
-    -3
-    0
     1
     2
-    2
-    12
-    14
-    21
-    22
-    23
+    2.5
+    3
+    7
 
 
 
@@ -167,17 +172,11 @@ bst.display(bst.get_root())
 bst.display_non_recursive(bst.get_root())
 ```
 
-    -14
-    -3
-    0
     1
     2
-    2
-    12
-    14
-    21
-    22
-    23
+    2.5
+    3
+    7
 
 
 
@@ -185,17 +184,11 @@ bst.display_non_recursive(bst.get_root())
 bst.display_nr2(bst.get_root())
 ```
 
-    -14
-    -3
-    0
     1
     2
-    2
-    12
-    14
-    21
-    22
-    23
+    2.5
+    3
+    7
 
 
 
@@ -203,17 +196,11 @@ bst.display_nr2(bst.get_root())
 bst.display_preorder(bst.get_root())
 ```
 
+    2
     1
-    0
-    2
-    -3
-    2
-    12
-    -14
-    14
-    23
-    21
-    22
+    3
+    2.5
+    7
 
 
 
@@ -221,20 +208,21 @@ bst.display_preorder(bst.get_root())
 bst.display_postorder(bst.get_root())
 ```
 
-    22
-    21
-    23
-    14
-    12
-    2
-    2
-    -14
-    -3
-    0
+    7
+    2.5
+    3
     1
+    2
 
 
 
 ```python
-
+bst.height(bst.get_root())
 ```
+
+
+
+
+    3
+
+
