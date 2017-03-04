@@ -32,6 +32,8 @@ Content
 
 We have also included the solutions and explanations for popular books in Python keeping in mind how the approach should be if the question is asked in a Google Interview :thumbsup:
 
- - [Cracking The Coding Interview - Gayle laakmann - 6th Edition](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/CrackingTheCodingInterview)
- - [Thinking With Python - Narsimha Karumachi - ](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/ThinkingWithPython)
- - [Interview Bit](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/InterviewBit)
+ a. [Cracking The Coding Interview - Gayle laakmann - 6th Edition](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/CrackingTheCodingInterview)
+ b. [Thinking With Python - Narsimha Karumachi - ](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/ThinkingWithPython)
+ c. [Interview Bit](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/InterviewBit)
+
+ 
