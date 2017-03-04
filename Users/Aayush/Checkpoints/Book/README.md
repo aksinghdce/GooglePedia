@@ -28,6 +28,10 @@ And, yes that's what we will cover here in much simpler, understandable and fun 
 Content
 -------
 
+ 1. [Introduction](https://github.com/aayush-bhardwaj/GooglePedia/blob/master/Users/Aayush/Checkpoints/Book/01.Introduction.md)
 
+We have also included the solutions and explanations for popular books in Python keeping in mind how the approach should be if the question is asked in a Google Interview <i class="fa fa-bolt"></i>
 
-
+ - [Cracking The Coding Interview - Gayle laakmann - 6th Edition](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/CrackingTheCodingInterview)
+ - [Thinking With Python - Narsimha Karumachi - ](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/ThinkingWithPython)
+ - [Interview Bit](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/InterviewBit)
