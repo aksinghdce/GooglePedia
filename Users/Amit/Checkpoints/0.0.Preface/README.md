@@ -1,5 +1,5 @@
 
-# Preface :thumsup:
+# Preface :thumbsup:
 
 This is a set of notes that can be compiled into a book for getting started with Programming like a pro.
 
