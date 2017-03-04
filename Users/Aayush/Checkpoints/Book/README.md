@@ -1,5 +1,7 @@
 
-## GooglePedia
+
+GooglePedia
+===========
 
 ### Why GooglePedia.
 
@@ -9,10 +11,10 @@ What is the **Big-4**?
 
 By Big-4 I mean the top 4 IT companies which are supposed to have the toughest technical interviews.
 
-1. Google
-2. Facebook
-3. Microsoft
-4. Amazon
+ 1. Google
+ 2. Facebook
+ 3. Microsoft
+ 4. Amazon
 
 Definetely, there are a lot of other cool companies out there but the idea is once we are prepared for these 4 companies we are well prepared to crack any other biggie out there.
 
@@ -22,6 +24,10 @@ Definetely, there are a lot of other cool companies out there but the idea is on
 As we all know the most important part of any Google interview is **"Data Structures and Algorithms"**.
 And, yes that's what we will cover here in much simpler, understandable and fun way.
 
-### Content:
+----------
+Content
+-------
+
+
 
 
