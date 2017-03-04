@@ -5,7 +5,7 @@ GooglePedia
 
 ### Why GooglePedia.
 
-This is a book written by inspiring Googlers for fellow inspiring Googlers. The idea is to have a clear understanding of concepts following "Feynman's principles's". So, once you have covered this book end-to-end one can be sure of cracking the Big-4 Interview.
+This is a book written by inspiring Googlers for fellow inspiring Googlers. The idea is to have a clear understanding of concepts following "Feynman's principle's". So, once you have covered this book end-to-end one can be sure of cracking the Big-4 Interview.
 
 What is the **Big-4**?
 
@@ -30,7 +30,7 @@ Content
 
  1. [Introduction](https://github.com/aayush-bhardwaj/GooglePedia/blob/master/Users/Aayush/Checkpoints/Book/01.Introduction.md)
 
-We have also included the solutions and explanations for popular books in Python keeping in mind how the approach should be if the question is asked in a Google Interview <i class="fa fa-bolt"></i>
+We have also included the solutions and explanations for popular books in Python keeping in mind how the approach should be if the question is asked in a Google Interview :thumbsup:
 
  - [Cracking The Coding Interview - Gayle laakmann - 6th Edition](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/CrackingTheCodingInterview)
  - [Thinking With Python - Narsimha Karumachi - ](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/ThinkingWithPython)
