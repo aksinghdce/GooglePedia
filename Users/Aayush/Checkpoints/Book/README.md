@@ -28,10 +28,27 @@ And, yes that's what we will cover here in much simpler, understandable and fun 
 Content
 -------
 
- 1. [Introduction](https://github.com/aayush-bhardwaj/GooglePedia/blob/master/Users/Aayush/Checkpoints/Book/01.Introduction.md)
+ 1. [Introduction](https://github.com/aayush-bhardwaj/GooglePedia/blob/master/Users/Aayush/Checkpoints/Book/01.Introduction/01.Introduction.md)
+ 2. Chapter 2
+ 3. Chapter 3
+ 4. Chapter 4
+ 5.  Chapter 5
+ 6.  Chapter 6
+ 7.  Chapter 7
+ 8.  Chapter 8
+ 9.  Chapter 9 
+ 10.  Chapter 10
+ 11.  Chapter 11
+ 12.  Chapter 12
+ 13.  Chapter 13
+ 14.  Chapter 14
+ 15.  [Practice Programming Questions](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/15.Miscellaneous)
+	 16. [001. Combination](https://github.com/aayush-bhardwaj/GooglePedia/blob/master/Users/Aayush/Checkpoints/Book/15.Miscellaneous/001.%20Combination.ipynb)
+	 17. [002. Permutation](https://github.com/aayush-bhardwaj/GooglePedia/blob/master/Users/Aayush/Checkpoints/Book/15.Miscellaneous/002.%20Permutation.ipynb)
+	 18. [003. Maximum Pairwise Product](https://github.com/aayush-bhardwaj/GooglePedia/blob/master/Users/Aayush/Checkpoints/Book/15.Miscellaneous/003.%20MaxPairwiseProduct.ipynb)
 
-We have also included the solutions and explanations for popular books in Python keeping in mind how the approach should be if the question is asked in a Google Interview :thumbsup:
+We have also included the solutions and explanations for popular books in Python keeping in mind how the approach should be if the question is asked in a Google Interview   :thumbsup:
 
- - [Cracking The Coding Interview - Gayle laakmann - 6th Edition](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/CrackingTheCodingInterview)
- - [Thinking With Python - Narsimha Karumachi - ](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/ThinkingWithPython)
- - [Interview Bit](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/InterviewBit)
+1.  [Cracking The Coding Interview - Gayle laakmann - 6th Edition](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/CrackingTheCodingInterview)
+2. [Thinking With Python - Narsimha Karumachi - ](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/ThinkingWithPython)
+3. [Interview Bit](https://github.com/aayush-bhardwaj/GooglePedia/tree/master/Users/Aayush/Checkpoints/Book/InterviewBit)
