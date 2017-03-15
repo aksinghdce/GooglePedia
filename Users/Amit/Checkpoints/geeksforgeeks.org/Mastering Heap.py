@@ -29,6 +29,8 @@ def max_heapify(A, i):
         max_heapify(A, largest)
 
 
+# # Non recursive implementation of max-heapify
+
 # In[63]:
 
 def max_heapify_non_rec(A, i):
@@ -109,4 +111,51 @@ def build_min_heap(A):
 # In[62]:
 
 build_min_heap([12, 3, 4, 5, 2, 1])
+
+
+# **Build heap operation takes $\mathcal{O}(n)$ **
+
+# # Heapsort
+
+# In[84]:
+
+def heapsort_descending(A):
+    build_max_heap(A)
+    i = len(A) - 1
+    while i > 0:
+        B = A[:i+1]
+        B[1], B[i] = B[i], B[1]
+        i = i - 1
+        max_heapify(B, 1)
+    print A
+
+
+# In[85]:
+
+def heapsort(A):
+    build_min_heap(A)
+    i = len(A) - 1
+    while i > 0:
+        B = A[:i+1]
+        B[1], B[i] = B[i], B[1]
+        i = i - 1
+        min_heapify(B, 1)
+    print A
+
+
+# In[86]:
+
+heapsort([12, 3, 4, 5, 2, 1])
+
+
+# In[87]:
+
+heapsort_descending([12, 3, 4, 5, 2, 1])
+
+
+# # Priority Queue
+
+# In[ ]:
+
+
 
