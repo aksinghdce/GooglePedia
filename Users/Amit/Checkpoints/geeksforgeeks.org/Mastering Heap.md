@@ -142,6 +142,7 @@ def heapsort_descending(A):
     build_max_heap(A)
     i = len(A) - 1
     while i > 0:
+        # B is an alias for a sub array of A and B doesn't get allocated a new set of memory
         B = A[:i+1]
         B[1], B[i] = B[i], B[1]
         i = i - 1
