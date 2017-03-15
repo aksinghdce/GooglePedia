@@ -29,7 +29,26 @@ def max_heapify(A, i):
         max_heapify(A, largest)
 
 
-# In[58]:
+# In[63]:
+
+def max_heapify_non_rec(A, i):
+    while i < (len(A) / 2):
+        l = 2 * i + 1
+        r = 2 * i + 2
+        if l >= len(A):
+            break
+        if l < len(A) and A[l] >= A[i]:
+            largest = l
+        else:
+            largest = i
+        if r < len(A) and A[r] >= A[largest]:
+            largest = r
+        if largest != i:
+            A[largest], A[i] = A[i], A[largest]
+            i = largest
+
+
+# In[66]:
 
 def build_max_heap(A):
     i = len(A) / 2 - 1
@@ -39,9 +58,24 @@ def build_max_heap(A):
     return A
 
 
-# In[59]:
+# In[67]:
+
+def build_max_heap_non_rec(A):
+    i = len(A) / 2 - 1
+    while i >= 0:
+        max_heapify_non_rec(A, i)
+        i = i - 1
+    return A
+
+
+# In[68]:
 
 build_max_heap([1, 2, 3, 4, 9, 16, 7])
+
+
+# In[69]:
+
+build_max_heap_non_rec([1, 2, 3, 4, 9, 16, 7])
 
 
 # In[60]:
