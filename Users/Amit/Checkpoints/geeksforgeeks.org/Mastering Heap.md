@@ -1,11 +1,29 @@
 
-Question: What are the minimum and maximum number of elements in a heap of height h?
+**Question**: What are the minimum and maximum number of elements in a heap of height h?
 
-Answer: Minimum : $2^h$ , Maximum: $2^{h+1} - 1$
+**Answer**: Minimum : $2^h$ , Maximum: $2^{h+1} - 1$
+
+**Explanation**: Minimum number of elements in a heap of height h is size of a binary tree of height (h-1) + 1. In short it's (size(h-1) + 1) and maximum number of elements in a heap of height h is size of a binary tree of height h - 1. In short that is size(h)
+
+To calculate size(h-1) :
+
+size(0) = $2^0$ = 1
+
+size(1) = $2^0$ + $2^1$ = 3
+
+...
+
+...
+
+size(h-1) = $2^0$ + $2^1$ + $2^2$ + $2^{h-1}$ = $2^0 (1 - 2^h) / (1-2)$ = $2^h - 1$
+
+so minumum = $2^h - 1 + 1$ = $2^h$
+
+and maximum = $2^{h+1} - 1$
 
 # Build Max-Heap
 
-We need to know that in a heap data structure the leaves start from (len(A)/2 + 1). Because if you want to get the child of this leaf you would get 2*(len(A) / 2 + 1) = len(A) + 2, which is not possible. Even the last element of the array is the child of the array-index len(A)/2
+We need to know that in a heap data structure the leaves start from (len(A)/2 + 1) for an array indexed at 1 and len(A)/2 for an array indexed at 0. Because if you want to get the child of this leaf you would get 2*(len(A) / 2 + 1) = len(A) + 2, which is not possible. Even the last element of the array is the child of the array-index len(A)/2
 
 We also need the procedure MAX-HEAPIFY(A, i)
 
@@ -180,6 +198,84 @@ heapsort_descending([12, 3, 4, 5, 2, 1])
 
 
 # Priority Queue
+
+Priority queue is a **data structure for maintaining a set S of elements**, each with an associated value called **key**.
+
+A max-priority queue supports the following operations:
+
+1. INSERT(S, x): inserts x into set S.
+2. MAXIMUM(S): returns the element with the maximum key from the set S.
+3. EXTRACT-MAX(S): removes and returns the element with max key in set S.
+4. INCREASE-KEY(S, x, k): increases the x's key to k. It's assumed that k is at least as large as x's current key.
+
+# Heap Class
+
+We need to create Heap class because we need to store the properties of the heap. The most important property being the heap-size.
+
+
+```python
+class Heap_(object):
+    #The heap class
+    def __init__(self, arr = None):
+        if arr == None:
+            self.arr = list()
+        else:
+            self.arr = arr
+        self.HEAP_SIZE = len(self.arr)
+    def set_heap_size(self, size):
+        self.HEAP_SIZE = size
+    def get_heap_size(self):
+        return self.HEAP_SIZE
+    def get_heap(self):
+        return self.arr
+    def max_heapify(self, index):
+        left = index * 2 + 1
+        right = index * 2 + 2
+        arr = self.get_heap()
+        len_heap_arr = self.get_heap_size()
+        if left >= len_heap_arr:
+            return
+        if left < len_heap_arr and arr[left] >= arr[index]:
+            largest = left
+        else:
+            largest = index
+        if right < len_heap_arr and arr[right] >= arr[largest]:
+            largest = right
+        if largest != index:
+            arr[largest], arr[index] = arr[index], arr[largest]
+            self.max_heapify(largest)
+    def build_heap(self):
+        arr= self.get_heap()
+        len_heap_arr = len(arr)
+        index = len_heap_arr / 2
+        while index >= 0:
+            self.max_heapify(index)
+            index = index - 1
+    def extract_max(self):
+        pass
+```
+
+
+```python
+heap = Heap_([1, 2, 3, 4, 9, 16, 7])
+```
+
+
+```python
+heap.build_heap()
+```
+
+
+```python
+heap.get_heap()
+```
+
+
+
+
+    [16, 9, 7, 4, 2, 3, 1]
+
+
 
 
 ```python
