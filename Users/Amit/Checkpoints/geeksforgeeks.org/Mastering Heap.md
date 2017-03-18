@@ -1,4 +1,8 @@
 
+# Practice working with Heap Data Structures and Algorithms from CLRS and Geeks for Geeks. Org
+
+## CLRS
+
 **Question**: What are the minimum and maximum number of elements in a heap of height h?
 
 **Answer**: Minimum : $2^h$ , Maximum: $2^{h+1} - 1$
@@ -258,6 +262,30 @@ class Heap_(object):
         self.set_heap_size(self.get_heap_size() - 1)
         self.max_heapify(0)
         return max_
+    def increase_key(self, i, key):
+        if i >= self.get_heap_size():
+            print "invalid index"
+            return
+        arr = self.get_heap()
+        if arr[i] > key:
+            print "Error: entered key is smaller than current key"
+        arr[i] = key
+        while i > 0:
+            parent = i / 2
+            if arr[parent] < arr[i]:
+                arr[parent], arr[i] = arr[i], arr[parent]
+                i = parent
+        return self.get_heap()
+    def insert_key(self, key):
+        heap_size = self.get_heap_size()
+        arr = self.get_heap()
+        if heap_size == len(arr):
+            arr.append(-1000)
+        elif heap_size < len(arr):
+            arr[heap_size] = -1000
+        self.set_heap_size(heap_size + 1)
+        self.increase_key(heap_size, key)
+        return arr
 ```
 
 
@@ -284,6 +312,42 @@ heap.get_heap()
 
 
 ```python
+heap.increase_key(1, 32)
+```
+
+
+
+
+    [32, 16, 7, 4, 2, 3, 1]
+
+
+
+
+```python
+heap.extract_max()
+```
+
+
+
+
+    32
+
+
+
+
+```python
+heap.get_heap()[:heap.get_heap_size()]
+```
+
+
+
+
+    [16, 4, 7, 1, 2, 3]
+
+
+
+
+```python
 heap.extract_max()
 ```
 
@@ -296,17 +360,74 @@ heap.extract_max()
 
 
 ```python
-heap.get_heap()
+heap.get_heap()[:heap.get_heap_size()]
 ```
 
 
 
 
-    [9, 4, 7, 1, 2, 3, 16]
+    [7, 4, 3, 1, 2]
 
 
 
 
 ```python
-
+heap.extract_max()
 ```
+
+
+
+
+    7
+
+
+
+
+```python
+heap.get_heap()[:heap.get_heap_size()]
+```
+
+
+
+
+    [4, 2, 3, 1]
+
+
+
+
+```python
+heap.increase_key(2, 32)
+```
+
+
+
+
+    [32, 4, 2, 1, 7, 16, 32]
+
+
+
+
+```python
+heap.insert_key(64)
+```
+
+
+
+
+    [64, 32, 4, 1, 2, 16, 32]
+
+
+
+
+```python
+heap.get_heap_size()
+```
+
+
+
+
+    5
+
+
+
+## Problems on Heap from CLRS continued...

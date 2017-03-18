@@ -1,6 +1,10 @@
 
 # coding: utf-8
 
+# # Practice working with Heap Data Structures and Algorithms from CLRS and Geeks for Geeks. Org
+# 
+# ## CLRS
+
 # **Question**: What are the minimum and maximum number of elements in a heap of height h?
 # 
 # **Answer**: Minimum : $2^h$ , Maximum: $2^{h+1} - 1$
@@ -187,7 +191,7 @@ heapsort_descending([12, 3, 4, 5, 2, 1])
 # 
 # We need to create Heap class because we need to store the properties of the heap. The most important property being the heap-size.
 
-# In[13]:
+# In[87]:
 
 class Heap_(object):
     #The heap class
@@ -233,49 +237,95 @@ class Heap_(object):
         self.set_heap_size(self.get_heap_size() - 1)
         self.max_heapify(0)
         return max_
+    def increase_key(self, i, key):
+        if i >= self.get_heap_size():
+            print "invalid index"
+            return
+        arr = self.get_heap()
+        if arr[i] > key:
+            print "Error: entered key is smaller than current key"
+        arr[i] = key
+        while i > 0:
+            parent = i / 2
+            if arr[parent] < arr[i]:
+                arr[parent], arr[i] = arr[i], arr[parent]
+                i = parent
+        return self.get_heap()
+    def insert_key(self, key):
+        heap_size = self.get_heap_size()
+        arr = self.get_heap()
+        if heap_size == len(arr):
+            arr.append(-1000)
+        elif heap_size < len(arr):
+            arr[heap_size] = -1000
+        self.set_heap_size(heap_size + 1)
+        self.increase_key(heap_size, key)
+        return arr
 
 
-# In[14]:
+# In[88]:
 
 heap = Heap_([1, 2, 3, 4, 9, 16, 7])
 
 
-# In[15]:
+# In[89]:
 
 heap.build_heap()
 
 
-# In[16]:
+# In[90]:
 
 heap.get_heap()
 
 
-# In[17]:
+# In[91]:
+
+heap.increase_key(1, 32)
+
+
+# In[92]:
 
 heap.extract_max()
 
 
-# In[19]:
+# In[93]:
 
 heap.get_heap()[:heap.get_heap_size()]
 
 
-# In[20]:
+# In[94]:
 
 heap.extract_max()
 
 
-# In[21]:
+# In[95]:
 
 heap.get_heap()[:heap.get_heap_size()]
 
 
-# In[22]:
+# In[96]:
 
 heap.extract_max()
 
 
-# In[23]:
+# In[97]:
 
 heap.get_heap()[:heap.get_heap_size()]
 
+
+# In[98]:
+
+heap.increase_key(2, 32)
+
+
+# In[99]:
+
+heap.insert_key(64)
+
+
+# In[100]:
+
+heap.get_heap_size()
+
+
+# ## Problems on Heap from CLRS continued...
