@@ -187,7 +187,7 @@ heapsort_descending([12, 3, 4, 5, 2, 1])
 # 
 # We need to create Heap class because we need to store the properties of the heap. The most important property being the heap-size.
 
-# In[9]:
+# In[13]:
 
 class Heap_(object):
     #The heap class
@@ -221,31 +221,61 @@ class Heap_(object):
             self.max_heapify(largest)
     def build_heap(self):
         arr= self.get_heap()
-        len_heap_arr = len(arr)
+        len_heap_arr = self.get_heap_size()
         index = len_heap_arr / 2
         while index >= 0:
             self.max_heapify(index)
             index = index - 1
     def extract_max(self):
-        pass
+        arr = self.get_heap()
+        max_ = arr[0]
+        arr[0], arr[self.get_heap_size() - 1] = arr[self.get_heap_size() - 1], arr[0]
+        self.set_heap_size(self.get_heap_size() - 1)
+        self.max_heapify(0)
+        return max_
 
 
-# In[10]:
+# In[14]:
 
 heap = Heap_([1, 2, 3, 4, 9, 16, 7])
 
 
-# In[11]:
+# In[15]:
 
 heap.build_heap()
 
 
-# In[12]:
+# In[16]:
 
 heap.get_heap()
 
 
-# In[ ]:
+# In[17]:
+
+heap.extract_max()
 
 
+# In[19]:
+
+heap.get_heap()[:heap.get_heap_size()]
+
+
+# In[20]:
+
+heap.extract_max()
+
+
+# In[21]:
+
+heap.get_heap()[:heap.get_heap_size()]
+
+
+# In[22]:
+
+heap.extract_max()
+
+
+# In[23]:
+
+heap.get_heap()[:heap.get_heap_size()]
 

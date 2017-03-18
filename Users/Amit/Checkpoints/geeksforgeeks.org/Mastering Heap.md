@@ -246,13 +246,18 @@ class Heap_(object):
             self.max_heapify(largest)
     def build_heap(self):
         arr= self.get_heap()
-        len_heap_arr = len(arr)
+        len_heap_arr = self.get_heap_size()
         index = len_heap_arr / 2
         while index >= 0:
             self.max_heapify(index)
             index = index - 1
     def extract_max(self):
-        pass
+        arr = self.get_heap()
+        max_ = arr[0]
+        arr[0], arr[self.get_heap_size() - 1] = arr[self.get_heap_size() - 1], arr[0]
+        self.set_heap_size(self.get_heap_size() - 1)
+        self.max_heapify(0)
+        return max_
 ```
 
 
@@ -274,6 +279,30 @@ heap.get_heap()
 
 
     [16, 9, 7, 4, 2, 3, 1]
+
+
+
+
+```python
+heap.extract_max()
+```
+
+
+
+
+    16
+
+
+
+
+```python
+heap.get_heap()
+```
+
+
+
+
+    [9, 4, 7, 1, 2, 3, 16]
 
 
 
